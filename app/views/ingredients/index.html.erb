@@ -16,7 +16,13 @@
 
       <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.user.email %></td>
+        <td>
+          <% if ingredient.user.present? %>
+            <a href="/users/<%= ingredient.user.id %>">
+              <%= ingredient.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= ingredient.food_group %></td>
         <td>
           <a href="/ingredients/<%= ingredient.id %>" class="btn btn-primary">Show</a>
