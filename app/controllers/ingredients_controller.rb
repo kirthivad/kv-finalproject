@@ -16,6 +16,7 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @meal_option = MealOption.new
     @ingredient = Ingredient.find(params[:id])
 
     render("ingredients/show.html.erb")
