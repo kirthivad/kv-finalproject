@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Meal Option #<%= @meal_option.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Ingredient</dt>
+      <dd><%= @meal_option.ingredient_id %></dd>
+
+      <dt>Recipe</dt>
+      <dd><%= @meal_option.recipe_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/meal_options" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/meal_options/<%= @meal_option.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_meal_option/<%= @meal_option.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

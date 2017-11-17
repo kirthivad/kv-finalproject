@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Meal_option resource:
+  # CREATE
+  get "/meal_options/new", :controller => "meal_options", :action => "new"
+  post "/create_meal_option", :controller => "meal_options", :action => "create"
+
+  # READ
+  get "/meal_options", :controller => "meal_options", :action => "index"
+  get "/meal_options/:id", :controller => "meal_options", :action => "show"
+
+  # UPDATE
+  get "/meal_options/:id/edit", :controller => "meal_options", :action => "edit"
+  post "/update_meal_option/:id", :controller => "meal_options", :action => "update"
+
+  # DELETE
+  get "/delete_meal_option/:id", :controller => "meal_options", :action => "destroy"
+  #------------------------------
+
   # Routes for the Recipe resource:
   # CREATE
   get "/recipes/new", :controller => "recipes", :action => "new"
