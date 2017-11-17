@@ -47,8 +47,6 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient = Ingredient.find(params[:id])
-
-    @ingredient.user_id = params[:user_id]
     @ingredient.food_group = params[:food_group]
 
     save_status = @ingredient.save
