@@ -24,7 +24,7 @@
           Ingredient
         </label>
 
-        <input type="text" id="ingredient_id" name="ingredient_id" placeholder="Ingredient" class="form-control" value="<%= @meal_option.ingredient_id %>">
+        <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :user_id, @meal_option.ingredient_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for recipe_id -->
