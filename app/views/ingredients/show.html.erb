@@ -17,12 +17,14 @@
       <a href="/ingredients" class="btn btn-primary">
         Back
       </a>
-      <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @ingredient.user %>
+        <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
