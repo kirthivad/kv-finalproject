@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
 
     @recipe.food_group = params[:food_group]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.instructions = params[:instructions]
 
     save_status = @recipe.save
 
@@ -51,6 +53,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     @recipe.food_group = params[:food_group]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.instructions = params[:instructions]
 
     save_status = @recipe.save
 

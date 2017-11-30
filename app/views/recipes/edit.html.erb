@@ -27,6 +27,24 @@
         <input type="text" id="food_group" name="food_group" placeholder="Food group" class="form-control" value="<%= @recipe.food_group %>">
       </div>
 
+      <!-- Label and input for ingredients -->
+      <div class="form-group">
+        <label for="ingredients" class="control-label">
+          Ingredients
+        </label>
+
+        <textarea id="ingredients" name="ingredients" placeholder="Ingredients" class="form-control" rows="3"><%= @recipe.ingredients %></textarea>
+      </div>
+
+      <!-- Label and input for instructions -->
+      <div class="form-group">
+        <label for="instructions" class="control-label">
+          Instructions
+        </label>
+
+        <textarea id="instructions" name="instructions" placeholder="Instructions" class="form-control" rows="3"><%= @recipe.instructions %></textarea>
+      </div>
+
       <button class="btn btn-warning">
         Update Recipe
       </button>
