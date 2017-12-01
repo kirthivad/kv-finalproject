@@ -18,13 +18,40 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for food_group -->
+      <!-- Label and input for recipe_name -->
       <div class="form-group">
-        <label for="food_group" class="control-label">
-          Food group
+        <label for="recipe_name" class="control-label">
+          Recipe name
         </label>
 
-        <input type="text" id="food_group" name="food_group" placeholder="Food group" class="form-control" value="<%= @recipe.food_group %>">
+        <input type="text" id="recipe_name" name="recipe_name" placeholder="Recipe name" class="form-control" value="<%= @recipe.recipe_name %>">
+      </div>
+
+      <!-- Label and input for ingredients -->
+      <div class="form-group">
+        <label for="ingredients" class="control-label">
+          Ingredients
+        </label>
+
+        <textarea id="ingredients" name="ingredients" placeholder="Ingredients" class="form-control" rows="3"><%= @recipe.ingredients %></textarea>
+      </div>
+
+      <!-- Label and input for instructions -->
+      <div class="form-group">
+        <label for="instructions" class="control-label">
+          Instructions
+        </label>
+
+        <textarea id="instructions" name="instructions" placeholder="Instructions" class="form-control" rows="3"><%= @recipe.instructions %></textarea>
+      </div>
+
+      <!-- Label and input for recipe_type -->
+      <div class="form-group">
+        <label for="recipe_type" class="control-label">
+          Recipe type
+        </label>
+
+        <input type="text" id="recipe_type" name="recipe_type" placeholder="Recipe type" class="form-control" value="<%= @recipe.recipe_type %>">
       </div>
 
       <button class="btn btn-success">

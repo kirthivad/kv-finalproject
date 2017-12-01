@@ -9,6 +9,11 @@
       <p class="lead">Narrow results:</p>
 
         <div class="form-group">
+    <%= f.label :ingredient_name_cont, "Ingredient name contains" %>
+    <%= f.text_field :ingredient_name_cont, :class => "form-control", :placeholder => "Ingredient name contains" %>
+  </div>
+
+<div class="form-group">
     <%= f.label :food_group_cont, "Food group contains" %>
     <%= f.text_field :food_group_cont, :class => "form-control", :placeholder => "Food group contains" %>
   </div>
@@ -54,13 +59,8 @@
       </script>
 
         <div class="form-group">
-      <%= f.label :user_email_cont, "User email contains" %>
-      <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
-    </div>
-
-<div class="form-group">
-      <%= f.label :recipes_food_group_cont, "Recipe food_group contains" %>
-      <%= f.text_field :recipes_food_group_cont, :class => "form-control", :placeholder => "Recipe food_group contains" %>
+      <%= f.label :recipes_recipe_name_cont, "Recipe recipe_name contains" %>
+      <%= f.text_field :recipes_recipe_name_cont, :class => "form-control", :placeholder => "Recipe recipe_name contains" %>
     </div>
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
@@ -77,28 +77,19 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User</th>
+        <th>Ingredient name</th>
         <th>Food group</th>
         <th>Actions</th>
       </tr>
 
       <% @ingredients.each do |ingredient| %>
       <tr>
-        <td>
-          <% if ingredient.user.present? %>
-            <a href="/users/<%= ingredient.user.id %>">
-              <%= ingredient.user.email %>
-            </a>
-          <% end %>
-        </td>
+        <td><%= ingredient.ingredient_name %></td>
         <td><%= ingredient.food_group %></td>
         <td>
           <a href="/ingredients/<%= ingredient.id %>" class="btn btn-primary">Show</a>
-          
-          <% if current_user == ingredient.user %>
-            <a href="/ingredients/<%= ingredient.id %>/edit" class="btn btn-warning">Edit</a>
-            <a href="/delete_ingredient/<%= ingredient.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-          <% end %>
+          <a href="/ingredients/<%= ingredient.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_ingredient/<%= ingredient.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

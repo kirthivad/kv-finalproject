@@ -1,17 +1,7 @@
 class IngredientsController < ApplicationController
-  before_action :current_user_must_be_ingredient_user, :only => [:edit, :update, :destroy]
-
-  def current_user_must_be_ingredient_user
-    ingredient = Ingredient.find(params[:id])
-
-    unless current_user == ingredient.user
-      redirect_to :back, :alert => "You are not authorized for that."
-    end
-  end
-
   def index
     @q = Ingredient.ransack(params[:q])
-    @ingredients = @q.result(:distinct => true).includes(:meal_options, :user, :recipes).page(params[:page]).per(10)
+    @ingredients = @q.result(:distinct => true).includes(:meal_options, :recipes).page(params[:page]).per(10)
 
     render("ingredients/index.html.erb")
   end
@@ -32,7 +22,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new
 
-    @ingredient.user_id = params[:user_id]
+    @ingredient.ingredient_name = params[:ingredient_name]
     @ingredient.food_group = params[:food_group]
 
     save_status = @ingredient.save
@@ -59,6 +49,8 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient = Ingredient.find(params[:id])
+
+    @ingredient.ingredient_name = params[:ingredient_name]
     @ingredient.food_group = params[:food_group]
 
     save_status = @ingredient.save

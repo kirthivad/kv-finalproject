@@ -18,8 +18,14 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for user_id -->
-      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <!-- Label and input for ingredient_name -->
+      <div class="form-group">
+        <label for="ingredient_name" class="control-label">
+          Ingredient name
+        </label>
+
+        <input type="text" id="ingredient_name" name="ingredient_name" placeholder="Ingredient name" class="form-control" value="<%= @ingredient.ingredient_name %>">
+      </div>
 
       <!-- Label and input for food_group -->
       <div class="form-group">

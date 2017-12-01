@@ -5,8 +5,17 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Food group</dt>
-      <dd><%= @recipe.food_group %></dd>
+      <dt>Recipe name</dt>
+      <dd><%= @recipe.recipe_name %></dd>
+
+      <dt>Ingredients</dt>
+      <dd><%= @recipe.ingredients %></dd>
+
+      <dt>Instructions</dt>
+      <dd><%= @recipe.instructions %></dd>
+
+      <dt>Recipe type</dt>
+      <dd><%= @recipe.recipe_type %></dd>
 
     </dl>
 
@@ -63,7 +72,7 @@
           Ingredient
         </label>
 
-        <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :user_id), :class => "form-control") %>
+        <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :ingredient_name), :class => "form-control") %>
       </div>
 
       <!-- Label and input for recipe_id -->
@@ -144,7 +153,7 @@
       <% @recipe.ingredients.each do |ingredient| %>
         <li class="list-group-item">
           <a href="/ingredients/<%= ingredient.id %>">
-            <%= ingredient.user_id %>
+            <%= ingredient.ingredient_name %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/ingredients/<%= ingredient.id %>" class="btn btn-primary">
@@ -163,16 +172,16 @@
   </div>
 </div>
 
-<!-- A Recipe has many users -->
+<!-- A Recipe has many fans -->
 
 <div class="row">
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Users
+        Fans
       </li>
 
-      <% @recipe.users.each do |user| %>
+      <% @recipe.fans.each do |user| %>
         <li class="list-group-item">
           <a href="/users/<%= user.id %>">
             <%= user.email %>
