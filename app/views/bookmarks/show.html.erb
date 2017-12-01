@@ -18,7 +18,7 @@
       <dd>
         <% if @bookmark.recipe.present? %>
           <a href="/recipes/<%= @bookmark.recipe_id %>">
-            <%= @bookmark.recipe.food_group %>
+            <%= @bookmark.recipe.recipe_name %>
           </a>
         <% end %>
       </dd>

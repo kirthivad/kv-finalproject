@@ -33,6 +33,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new
 
     @ingredient.user_id = params[:user_id]
+    @ingredient.ingredient_name = params[:ingredient_name]
     @ingredient.food_group = params[:food_group]
 
     save_status = @ingredient.save
@@ -59,6 +60,7 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient = Ingredient.find(params[:id])
+    @ingredient.ingredient_name = params[:ingredient_name]
     @ingredient.food_group = params[:food_group]
 
     save_status = @ingredient.save
