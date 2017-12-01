@@ -24,8 +24,8 @@
   </div>
 
 <div class="form-group">
-    <%= f.label :ingredients_cont, "Ingredients contains" %>
-    <%= f.text_field :ingredients_cont, :class => "form-control", :placeholder => "Ingredients contains" %>
+    <%= f.label :ingredient_list_cont, "Ingredient list contains" %>
+    <%= f.text_field :ingredient_list_cont, :class => "form-control", :placeholder => "Ingredient list contains" %>
   </div>
 
 <div class="form-group">
@@ -93,7 +93,7 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Recipe name</th>
-        <th>Ingredients</th>
+        <th>Ingredient list</th>
         <th>Instructions</th>
         <th>Recipe type</th>
         <th>Actions</th>
@@ -102,7 +102,7 @@
       <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.recipe_name %></td>
-        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.ingredient_list %></td>
         <td><%= recipe.instructions %></td>
         <td><%= recipe.recipe_type %></td>
         <td>

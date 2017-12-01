@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
 
     @recipe.recipe_name = params[:recipe_name]
-    @recipe.ingredients = params[:ingredients]
+    @recipe.ingredient_list = params[:ingredient_list]
     @recipe.instructions = params[:instructions]
     @recipe.recipe_type = params[:recipe_type]
 
@@ -54,7 +54,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     @recipe.recipe_name = params[:recipe_name]
-    @recipe.ingredients = params[:ingredients]
+    @recipe.ingredient_list = params[:ingredient_list]
     @recipe.instructions = params[:instructions]
     @recipe.recipe_type = params[:recipe_type]
 

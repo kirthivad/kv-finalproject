@@ -27,13 +27,13 @@
         <input type="text" id="recipe_name" name="recipe_name" placeholder="Recipe name" class="form-control" value="<%= @recipe.recipe_name %>">
       </div>
 
-      <!-- Label and input for ingredients -->
+      <!-- Label and input for ingredient_list -->
       <div class="form-group">
-        <label for="ingredients" class="control-label">
-          Ingredients
+        <label for="ingredient_list" class="control-label">
+          Ingredient list
         </label>
 
-        <textarea id="ingredients" name="ingredients" placeholder="Ingredients" class="form-control" rows="3"><%= @recipe.ingredients %></textarea>
+        <textarea id="ingredient_list" name="ingredient_list" placeholder="Ingredient list" class="form-control" rows="3"><%= @recipe.ingredient_list %></textarea>
       </div>
 
       <!-- Label and input for instructions -->
