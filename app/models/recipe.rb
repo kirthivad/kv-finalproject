@@ -9,7 +9,7 @@ class Recipe < ApplicationRecord
 
   # Indirect associations
 
-  has_many   :users,
+  has_many   :fans,
              :through => :bookmarks,
              :source => :user
 

@@ -24,7 +24,7 @@
           Ingredient
         </label>
 
-        <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :user_id, @meal_option.ingredient_id), :class => "form-control") %>
+        <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :ingredient_name, @meal_option.ingredient_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for recipe_id -->
@@ -33,7 +33,7 @@
           Recipe
         </label>
 
-        <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :food_group, @meal_option.recipe_id), :class => "form-control") %>
+        <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :recipe_name, @meal_option.recipe_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">

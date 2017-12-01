@@ -1,1 +1,1 @@
-{"name":"Kirthi's Final Project","repository":"https://github.com/kirthivad/kirthi_s_final_project","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
+{"name":"KV Final Project - HomeChef","repository":"https://github.com/kirthivad/kirthi_s_final_project","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}

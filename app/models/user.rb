@@ -4,12 +4,9 @@ class User < ApplicationRecord
   has_many   :bookmarks,
              :dependent => :destroy
 
-  has_many   :ingredients,
-             :dependent => :destroy
-
   # Indirect associations
 
-  has_many   :recipes,
+  has_many   :favorites,
              :through => :bookmarks,
              :source => :recipe
 
