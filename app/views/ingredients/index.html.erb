@@ -14,6 +14,11 @@
   </div>
 
 <div class="form-group">
+    <%= f.label :ingredient_name_cont, "Ingredient name contains" %>
+    <%= f.text_field :ingredient_name_cont, :class => "form-control", :placeholder => "Ingredient name contains" %>
+  </div>
+
+<div class="form-group">
           <%= f.label :created_at, "Created at" %>
           <div class="row">
             <div class='col-md-6 mb-1'>
@@ -59,8 +64,8 @@
     </div>
 
 <div class="form-group">
-      <%= f.label :recipes_food_group_cont, "Recipe food_group contains" %>
-      <%= f.text_field :recipes_food_group_cont, :class => "form-control", :placeholder => "Recipe food_group contains" %>
+      <%= f.label :recipes_recipe_name_cont, "Recipe recipe_name contains" %>
+      <%= f.text_field :recipes_recipe_name_cont, :class => "form-control", :placeholder => "Recipe recipe_name contains" %>
     </div>
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
@@ -78,6 +83,7 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>User</th>
+        <th>Ingredient name</th>
         <th>Food group</th>
         <th>Actions</th>
       </tr>
@@ -91,6 +97,7 @@
             </a>
           <% end %>
         </td>
+        <td><%= ingredient.ingredient_name %></td>
         <td><%= ingredient.food_group %></td>
         <td>
           <a href="/ingredients/<%= ingredient.id %>" class="btn btn-primary">Show</a>

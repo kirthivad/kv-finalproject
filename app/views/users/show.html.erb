@@ -87,19 +87,19 @@
   </div>
 </div>
 
-<!-- A User has many recipes -->
+<!-- A User has many favorites -->
 
 <div class="row">
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Recipes
+        Favorites
       </li>
 
-      <% @user.recipes.each do |recipe| %>
+      <% @user.favorites.each do |recipe| %>
         <li class="list-group-item">
           <a href="/recipes/<%= recipe.id %>">
-            <%= recipe.food_group %>
+            <%= recipe.recipe_name %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
