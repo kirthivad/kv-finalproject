@@ -54,8 +54,8 @@
     </div>
 
 <div class="form-group">
-      <%= f.label :recipe_food_group_cont, "Recipe food_group contains" %>
-      <%= f.text_field :recipe_food_group_cont, :class => "form-control", :placeholder => "Recipe food_group contains" %>
+      <%= f.label :recipe_recipe_name_cont, "Recipe recipe_name contains" %>
+      <%= f.text_field :recipe_recipe_name_cont, :class => "form-control", :placeholder => "Recipe recipe_name contains" %>
     </div>
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
@@ -89,7 +89,7 @@
         <td>
           <% if bookmark.recipe.present? %>
             <a href="/recipes/<%= bookmark.recipe.id %>">
-              <%= bookmark.recipe.food_group %>
+              <%= bookmark.recipe.recipe_name %>
             </a>
           <% end %>
         </td>

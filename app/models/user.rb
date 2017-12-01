@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   # Indirect associations
 
-  has_many   :recipes,
+  has_many   :favorites,
              :through => :bookmarks,
              :source => :recipe
 

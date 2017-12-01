@@ -18,7 +18,7 @@
       <dd>
         <% if @meal_option.recipe.present? %>
           <a href="/recipes/<%= @meal_option.recipe_id %>">
-            <%= @meal_option.recipe.food_group %>
+            <%= @meal_option.recipe.recipe_name %>
           </a>
         <% end %>
       </dd>
