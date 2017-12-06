@@ -18,5 +18,10 @@ class Recipe < ApplicationRecord
              :source => :ingredient
 
   # Validations
+  
+  validates :recipe_name, :presence => true, :uniqueness => true
+  validates :recipe_type, :presence => true
+  validates :instructions, :presence => true
+  validates :ingredient_list, :presence => true
 
 end

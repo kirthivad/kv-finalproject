@@ -3,10 +3,11 @@
     Recipes
     <a href="/recipes/new" class="btn btn-lg btn-success">New Recipe</a>
   </h1>
-</div><div class="row mb-1">
+</div>
+<div class="row mb-1">
   <div class="col-md-12">
-    <%= search_form_for @q, :class => collapse_search_form, :id => "recipes_filters" do |f| %>
-      <p class="lead">Find a recipe to make tonight!</p>
+    <%= search_form_for @q, :id => "recipes_filters" do |f| %>
+      <p class="lead"> <h2> Find a recipe to make tonight! </h2> </p>
 
   <div class="form-group">
     <%= f.label :ingredient_list_cont, "Ingredient list contains" %>
@@ -17,14 +18,16 @@
     <%= f.label :recipe_name_cont, "Recipe name contains" %>
     <%= f.text_field :recipe_name_cont, :class => "form-control", :placeholder => "Recipe name contains" %>
   </div>
+  
+  <div class="form-group">
+    <%= f.label :recipe_type_cont, "Recipe type contains" %>
+    <%= f.text_field :recipe_type_cont, :class => "form-control", :placeholder => "Recipe type contains" %>
+  </div>
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
       <a href="/recipes" class="btn btn-default btn-block mb-1">Clear filters</a>
     <% end %>
-    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#recipes_filters">
-      Show Filters
-    </a>
   </div>
 </div>
 
@@ -41,11 +44,12 @@
 
       <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.recipe_name %></td>
+        <td><a href="/recipes/<%= recipe.id%>"> <%= recipe.recipe_name %> </a></td>
         <td><%= recipe.ingredient_list %></td>
         <td><%= recipe.instructions %></td>
         <td><%= recipe.recipe_type %></td>
         <td>
+          
           <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">Show</a>
           <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
