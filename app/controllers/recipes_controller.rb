@@ -42,6 +42,20 @@ class RecipesController < ApplicationController
     else
       render("recipes/new.html.erb")
     end
+    
+    @new_ingredients=@recipe.ingredient_list.split(",")
+    @new_ingredients.each do |food|
+      if Ingredient.find_by(:ingredient_name => food) == nil
+        i = Ingredient.new
+        i.ingredient_name = food
+        i.save
+      end
+      z = MealOption.new
+      z.ingredient_id = Ingredient.find_by(:ingredient_name => food).id
+      z.recipe_id = @recipe.id
+      z.save
+    end
+    
   end
 
   def edit
