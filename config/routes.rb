@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-  root :to => "ingredients#index"
+  root :to => "recipes#index"
   
   # Routes for the Bookmark resource:
   # CREATE

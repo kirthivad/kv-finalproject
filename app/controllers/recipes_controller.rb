@@ -27,6 +27,7 @@ class RecipesController < ApplicationController
     @recipe.ingredient_list = params[:ingredient_list]
     @recipe.instructions = params[:instructions]
     @recipe.recipe_type = params[:recipe_type]
+    @recipe.user_id = params[:user_id]
 
     save_status = @recipe.save
 
@@ -71,6 +72,7 @@ class RecipesController < ApplicationController
     @recipe.ingredient_list = params[:ingredient_list]
     @recipe.instructions = params[:instructions]
     @recipe.recipe_type = params[:recipe_type]
+    @recipe.user_id = params[:user_id]
 
     save_status = @recipe.save
 

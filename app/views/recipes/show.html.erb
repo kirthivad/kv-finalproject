@@ -5,16 +5,16 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Recipe name</dt>
+      <dt>Recipe Name</dt>
       <dd><%= @recipe.recipe_name %></dd>
 
-      <dt>Ingredient list</dt>
+      <dt>Ingredient List</dt>
       <dd><%= @recipe.ingredient_list %></dd>
 
       <dt>Instructions</dt>
       <dd><%= @recipe.instructions %></dd>
 
-      <dt>Recipe type</dt>
+      <dt>Cuisine Type</dt>
       <dd><%= @recipe.recipe_type %></dd>
 
     </dl>
@@ -23,12 +23,14 @@
       <a href="/recipes" class="btn btn-primary">
         Back
       </a>
-      <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-warning">
+      <% if @recipe.bookmarks.find_by(:user_id => current_user.id) %>
+        <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-warning">
         Edit
-      </a>
-      <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+        </a>
+        <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
